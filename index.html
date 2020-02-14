@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notlar</title>
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/xama.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="dflex justify-between align-center p-l-15">
+        <div class="navbar-brand" onclick="renderDOM('active')">Notlar</div>
+        <ul class="navbar-nav">
+          <li><button onclick="toggleModal()"><i class="ion-plus text-large"></i></button></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Content -->
+    <section class="page-wrapper p-x-15 p-y-15">
+      <ul class="todo-list">
+      </ul>
+      <div class="empty" id="empty">
+        <i class="ion-ios-list-outline"></i>
+        <strong>Notlar boşdur</strong>
+      </div>
+    </section>
+    <!-- Toolbar -->
+    <section class="toolbar">
+      <ul class="toolbar-nav">
+        <li class="active"><button onclick="renderDOM('active')">Hamısı</button></li>
+        <li>
+          <button onclick="renderDOM('deleted')">Silinənlər</button>
+        </li>
+      </ul>
+    </section>
+    <!-- Modal -->
+    <section class="modal">
+      <div class="modal-content">
+        <div class="modal-head">
+          <div class="dflex align-center justify-between">
+            <div class="dflex align-center">
+              <button class="modal-button m-r-10" onclick="toggleModal()"><i class="ion-android-arrow-back"></i></button>
+              <h4>Yeni not</h4>
+            </div>
+            <div>
+              <button class="modal-button" onclick="addNote()"><i class="ion-android-done"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body">
+          <textarea name="message" class="form-control" id="messageId" placeholder="Bir şeylər yazın..."></textarea>
+        </div>
+      </div>
+    </section>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
+  </body>
+</html>

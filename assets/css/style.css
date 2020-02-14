@@ -1,0 +1,157 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+.navbar {
+  position: relative;
+  background: #190cff;
+  height: 55px;
+}
+.navbar-brand {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.navbar-nav > li > button {
+  display: inline-block;
+  color: #fff;
+  background: transparent;
+  border:none;
+  outline: none;
+  user-select: none;
+  width: 55px;
+  height: 55px;
+}
+.navbar-nav > li > button:active {
+  background: rgba(0, 0, 0, 0.15);
+}
+.page-wrapper {
+  flex:1;
+  overflow-y: scroll;
+}
+.toolbar {
+  position: relative;
+  background: #fff;
+  padding: 15px 15px;
+}
+.toolbar > ul {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.toolbar > ul > li {
+  flex: 1;
+}
+.toolbar > ul > li > button {
+  display: block;
+  color: #888;
+  background: transparent;
+  border:none;
+  outline: none;
+  user-select: none;
+  border-radius:6px;
+  height: 45px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+}
+.toolbar > ul > li.active > button {
+  color: #555;
+  background: #eee;
+}
+.todo-list li {
+  position: relative;
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.15);
+  user-select: none;
+}
+.todo-list li.active {
+  background: #cbe0ff;
+  box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+.todo-list p {
+  color: #888;
+  line-height: 1.5;
+}
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #888;
+  padding: 30px;
+}
+.empty i {
+  font-size: 60px;
+}
+.empty strong {
+  display: block;
+  margin-top: 15px;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+}
+.modal.active {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  height: 100vh;
+}
+.modal-head {
+  position: relative;
+  padding: 10px;
+}
+.modal-body {
+  flex: 1;
+}
+.modal-button {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  font-size: 25px;
+}
+.modal-button:active {
+  color: #0c77ff;
+  background: rgba(0, 0, 0, 0.05);
+}
+textarea.form-control {
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  padding: 20px;
+  outline: none;
+  border: none;
+  background: none;
+}
