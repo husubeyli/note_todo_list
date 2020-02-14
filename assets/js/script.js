@@ -10,8 +10,12 @@ function addNote() {
   let message = messageVal.value.split("\n");
   let title1 = message.shift();
   let content1 = message.join(" ");
+  // if(content1.length == 0){
+  //   validateContent = title1.split(".");
+  //   title1 = validateContent.shift();
+  //   content1 = validateContent.join(' ')
+  // }
 
-  
   
   let payLoad = {
     title: title1,
@@ -21,18 +25,8 @@ function addNote() {
   toggleModal();
   if (title1.length == 0) {
     return;
-  } else if (content1.length == 0) {
-    
-    let valueI = messageVal.value.split(',')
-    
-    
-    title1 = valueI.shift()
-    content1 = valueI.join(' ')
-    
   }
   //content hisse yazilmayanda title ayrica secilib bir hisse gotursun qalanida contentde duwsun ora
-
-  
 
   notes.push(payLoad);
   messageVal.value = "";
@@ -81,6 +75,7 @@ function renderDOM(val) {
     }
 
   }
+  document.querySelector('#notlar').innerText = 'NOTLAR'
 
 
   if (notes.length > 0) {
@@ -93,9 +88,19 @@ function renderDOM(val) {
 // listin uzerine click elediyimiz zaman acib oxumaq
 readList = function (indeks){
   if(event.target.type !== 'submit'){
-  document.querySelector('.todo-list').innerHTML = notes[indeks].title + ' ' +  notes[indeks].content
+    let title = document.createElement('h4')
+    title.innerText = notes[indeks].title;
+    let content = document.createElement('p');
+    content.innerText = notes[indeks].content;
+    document.querySelector('.todo-list').innerHTML = ''
+    document.querySelector('.todo-list').append(title);
+    document.querySelector('.todo-list').append(content);
+
+  
   } 
+  document.querySelector('#notlar').innerText = 'Geri qayıt'
 }
+
 
 //delete buttonin funksiyasi
 function deleteItem(index) {
@@ -117,6 +122,11 @@ function deleteItem(index) {
  
 }
 
+function changeTab(val){
+    document.querySelector('#notlar').setAttribute('onclick', `renderDOM('${val}')`)
+    
+    renderDOM(val)
+}
 
 
 // UZERINE BASIB SAXLAMAQ UCUN LAZIM OLAN FUNCKSIYALAR

@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="assets/css/xama.min.css">
     <link rel="stylesheet" href="assets/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+      ion-icon{
+        width: 100px;
+        height: 50px;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="dflex justify-between align-center p-l-15">
-        <div class="navbar-brand" onclick="renderDOM('active')">Notlar</div>
+      <div class="dflex justify-between align-center p-l-15" id = 'basliq'>
+        <div class="navbar-brand"  id="notlar" onclick="renderDOM('active')">Notlar</div>
         <ul class="navbar-nav">
           <li><button onclick="toggleModal()"><i class="ion-plus text-large"></i></button></li>
         </ul>
@@ -32,9 +39,9 @@
     <!-- Toolbar -->
     <section class="toolbar">
       <ul class="toolbar-nav">
-        <li class="active"><button onclick="renderDOM('active')">Hamısı</button></li>
+        <li class="active"><button onclick="changeTab('active')">Hamısı</button></li>
         <li>
-          <button onclick="renderDOM('deleted')">Silinənlər</button>
+          <button onclick="changeTab('deleted')">Silinənlər</button>
         </li>
       </ul>
     </section>
